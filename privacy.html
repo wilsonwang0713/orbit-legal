@@ -89,14 +89,13 @@ footer {
 </header>
 <main>
   <h1>Privacy Policy</h1>
-  <p class="meta">Effective 31 July 2026</p>
+  <p class="meta">Effective 1 August 2026</p>
   <p class="notice">Drafted by the Orbit engineering team. Have a qualified lawyer review this document before launch.</p>
   <h2>Who we are</h2>
   <p>Orbit is an iOS app that sells prepaid travel eSIM data plans. It is operated by YIH-HSUAN WANG, an independent developer in Taiwan ("we", "us", "Orbit").</p>
   <p>This policy explains exactly what we collect, why we collect it, who we hand it to, and how to get it deleted. It covers the Orbit iOS app and the ordering, payment and eSIM-delivery system behind it.</p>
   <h2>What we collect</h2>
-  <p>Your email address. You give it to us when you sign in, either directly or through Sign in with Apple. If you use Sign in with Apple and choose "Hide My Email", we only ever receive Apple's private relay address: we can send mail to it, but we cannot see your real address.</p>
-  <p>Sign-in codes. When you sign in with email we send a six-digit one-time code to that address and keep its short-lived verification state until it is used or expires.</p>
+  <p>Your email address. Sign in with Apple is the only way to sign in to Orbit, so the address reaches us from Apple and never from a form in the app. If you choose "Hide My Email" at the Apple prompt, all we ever receive is Apple's private relay address ending in @privaterelay.appleid.com — we cannot see your real address, and we never ask you to supply it. A relayed address is treated exactly like any other: nothing in the app is withheld, restricted or degraded because you chose to hide your email.</p>
   <p>Order records. For every purchase: the plan you bought, the price and currency, the time of the order, its status (pending, paid, issued, cancelled, refunded) and an order reference.</p>
   <p>eSIM credentials. Once your eSIM is issued we store the technical details needed to install and support it: the ICCID, the SM-DP+ address, the activation code, the APN, and the installation QR code.</p>
   <p>Usage and validity data. Data used, data remaining, and activation and expiry dates. Our eSIM supplier reports this back to us so the app can show it. We do not measure it ourselves.</p>
@@ -109,13 +108,14 @@ footer {
     <li>No tracking of you across other companies' apps or websites. That is why the app never shows the App Tracking Transparency prompt.</li>
     <li>No location data. The app never asks for it and never reads it.</li>
     <li>No access to your contacts, photos, camera, microphone, calendar or health data.</li>
+    <li>No passwords. There are none to collect: Sign in with Apple is the only way in.</li>
     <li>No card numbers. See "Payments" below; they never reach us.</li>
     <li>No content of your internet traffic. We cannot see the sites you visit, the apps you use or the messages you send over the eSIM.</li>
     <li>We never sell or rent your personal data. There is no circumstance in which we would.</li>
   </ul>
   <h2>Why we use your data</h2>
   <ul>
-    <li>To create and secure your account and sign you in (email address, one-time codes).</li>
+    <li>To create and secure your account and sign you in (the email address Apple passes us, real or relayed).</li>
     <li>To take your order and deliver it: buy the matching profile from our supplier, issue it to you, and show the QR code and installation details in the app (email, order record, eSIM credentials).</li>
     <li>To show you your eSIMs and how much data and time is left (eSIM credentials, usage data).</li>
     <li>To provide support: look up your order, investigate a failed issue, answer a question.</li>
@@ -129,18 +129,17 @@ footer {
     <li>Supabase — our database, authentication and backend hosting. It holds your email address, your orders and your eSIM credentials. Hosted in Sydney, Australia (ap-southeast-2).</li>
     <li>Lemon Squeezy — our payment provider and Merchant of Record. Checkout happens on a Lemon Squeezy web page outside the app. They receive your email and the order details and collect your payment details directly. We receive back only the outcome (paid, failed, refunded) and a transaction reference. We never see or store your card number.</li>
     <li>eSIM Access — our eSIM supplier. To issue your eSIM we send them the plan identifier and the order reference. They return the eSIM credentials, the QR code image and the usage data the app shows you. The QR code image is hosted by the supplier.</li>
-    <li>Google (Gmail SMTP) — delivers your six-digit sign-in code. Your email address passes through Google's mail servers for that one message. It is the only email we send you; your eSIM and its QR code live in the app, not in your inbox.</li>
-    <li>Apple — if you use Sign in with Apple, Apple performs the authentication and passes us the (possibly relayed) email address. Apple's own privacy policy governs that step.</li>
+    <li>Apple — Apple performs the sign-in and passes us your email address, which is Apple's private relay address if you chose "Hide My Email". Apple's own privacy policy governs that step.</li>
   </ul>
+  <p>There is no mail provider on this list, because Orbit never sends you email. No sign-in codes, no receipts, no newsletters, nothing: your eSIM and its QR code live in the app, and Lemon Squeezy issues the payment receipt as Merchant of Record. The only exception is a reply from us if you write to our support address first.</p>
   <p>We will also disclose data where we are legally required to, in response to a valid order or lawful request from a competent authority, or to establish, exercise or defend a legal claim. If that happens we will tell you unless the law forbids it.</p>
   <p>That is the complete list. There is nobody else.</p>
   <h2>Where your data is stored, and cross-border transfers</h2>
   <p>Your account and order data live in a Supabase PostgreSQL database hosted in Sydney, Australia (ap-southeast-2). The backend functions that read and write it run in the same Supabase project.</p>
-  <p>Because we operate from Taiwan on an Australian-hosted database, and because our payment, email and eSIM providers operate internationally (including in the United States and the European Union), your personal data will be transferred and processed outside your own country. We only use providers that commit contractually to protecting the data they process on our behalf, and we send each of them the minimum they need.</p>
+  <p>Because we operate from Taiwan on an Australian-hosted database, and because our payment and eSIM providers operate internationally (including in the United States and the European Union), your personal data will be transferred and processed outside your own country. We only use providers that commit contractually to protecting the data they process on our behalf, and we send each of them the minimum they need.</p>
   <h2>How long we keep it</h2>
   <ul>
-    <li>Sign-in codes: minutes. They expire quickly and are then useless.</li>
-    <li>Account data (your email address): until you delete your account.</li>
+    <li>Account data (the email address Apple gave us): until you delete your account.</li>
     <li>eSIM credentials: until you delete your account, or until the plan has been expired long enough that support is no longer plausible, whichever comes first.</li>
     <li>Order and transaction records: for as long as tax and accounting law requires (in Taiwan this is currently at least five years). After you delete your account these records are de-identified: they are no longer linked to you or your email, and only the financial facts remain.</li>
     <li>Support correspondence: normally up to two years, so we can pick up the thread if you write again.</li>
@@ -149,14 +148,14 @@ footer {
   <p>You can ask us to show you the personal data we hold about you, correct it if it is wrong, delete it, or stop a particular use of it. Depending on where you live you may also have the right to receive a copy in a portable format, or to complain to your data protection authority.</p>
   <p>Deleting your account in the app: open the Account tab and use Delete account. When you confirm, we delete your account and the personal data attached to it: your email address, your sessions, and your eSIM credentials. What survives is a de-identified financial record of your orders (amount, currency, date, status, transaction reference) that we are required to keep for accounting, tax and refund-dispute purposes. That record can no longer be connected back to you.</p>
   <p>Deleting your account does not cancel an eSIM you have already installed, and it does not by itself produce a refund. If you want a refund, ask for it <strong>before</strong> you delete your account. See the refund rules in our Terms of Service.</p>
-  <p>For anything else, email wilson07131@gmail.com. We will respond within 30 days. We may first need to confirm that you control the email address on the account, so that we do not hand your data to somebody else.</p>
+  <p>For anything else, email wilson07131@gmail.com. We will respond within 30 days. We may first need to confirm that the account is yours, so that we do not hand your data to somebody else. If you signed in with "Hide My Email" we cannot reach you at your real address, so the surest proof is to write to us from the account's relay address, or to sign in and use Delete account in the app.</p>
   <h2>Children</h2>
   <p>Orbit is not directed at children and we do not knowingly collect personal data from anyone under 16. If you believe a child has given us personal data, email us and we will delete it.</p>
   <h2>Security</h2>
   <p>Access to the database is restricted by row-level security rules, so your orders and eSIM credentials are readable only by your own authenticated session and by the staff accounts that handle support. Traffic between the app, our backend and our providers is encrypted in transit with TLS. Payment credentials never touch our systems. Provider API keys exist only on the server side and are never shipped inside the app.</p>
   <p>No system is perfect. If a breach ever affects your personal data, we will notify you and the relevant authority as the law requires.</p>
   <h2>Changes to this policy</h2>
-  <p>If we change how we handle your data we will update this page and change the effective date at the top. For a change that materially affects you — a new category of data, a new recipient, a new purpose — we will also tell you in the app or by email before it takes effect.</p>
+  <p>If we change how we handle your data we will update this page and change the effective date at the top. For a change that materially affects you — a new category of data, a new recipient, a new purpose — we will also tell you in the app before it takes effect. We say "in the app" rather than "by email" because we do not email you, and because "Hide My Email" means we may have no way to reach you outside it.</p>
   <h2>Contact</h2>
   <p>Email: wilson07131@gmail.com</p>
   <p>Operator: YIH-HSUAN WANG, an independent developer based in Taiwan.</p>
